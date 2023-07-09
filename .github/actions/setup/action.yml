@@ -1,19 +1,20 @@
 
 name: Setup
+description: Setup Python and Poetry
 
 inputs:
   python-version:
-    description: 'Python version to use'
+    description: Python version to use
     required: true
-    default: '3.10'
+    default: "3.10"
   poetry-version:
-    description: 'Poetry version to use'
+    description: Poetry version to use
     required: true
-    default: '1.5.1'
+    default: "1.5.1"
   poetry-url:
-    description: 'Poetry installation URL'
+    description: Poetry installation URL
     required: true
-    default: 'https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py'
+    default: https://install.python-poetry.org/
 
 runs:
   using: composite
