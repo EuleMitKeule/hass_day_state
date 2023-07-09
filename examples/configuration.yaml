@@ -1,0 +1,35 @@
+
+sensor:
+- platform: hass_day_state
+  sensors:
+  - unique_id: kuche_day_state
+    friendly_name: Küche Day State
+    default_state: day
+    states:
+    - type: elevation
+      name: day1
+      value: 35
+    - type: elevation
+      name: day2
+      value: 30
+    - type: elevation
+      name: day3
+      value: 32
+    - type: elevation
+      name: day4
+      value: 37
+    - type: elevation
+      name: evening
+      value: 3.5
+    - type: time
+      name: night
+      from: "01:00"
+      to: "05:30"
+    - type: time
+      name: night3
+      from: "18:20"
+      to: "19:30"
+    - type: time
+      name: night2
+      from: "18:00"
+      to: "19:00"
