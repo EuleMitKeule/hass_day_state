@@ -9,13 +9,27 @@ packages = [{include = "hass_day_state"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+pytz = "^2023.3"
+types-pytz = "^2023.3.0.0"
+voluptuous = "^0.13.1"
+homeassistant = "^2023.7.1"
+homeassistant-stubs = "^2023.7.1"
+voluptuous-stubs = "^0.1.1"
 
 [tool.poetry.group.dev.dependencies]
 black = "^23.3.0"
 isort = "^5.12.0"
 mypy = "^1.4.1"
 bandit = "^1.7.5"
+flake8-pyproject = "^1.2.3"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = "E203"

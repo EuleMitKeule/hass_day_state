@@ -68,7 +68,7 @@ async def async_setup_platform(
     hass: HomeAssistant,
     config: ConfigType,
     async_add_entities: AddEntitiesCallback,
-    discovery_info: DiscoveryInfoType = None,
+    discovery_info: DiscoveryInfoType | None = None,
 ) -> None:
     """Set up the hass_day_state sensor platform."""
 
@@ -82,7 +82,7 @@ async def _async_create_entities(
 ) -> list[SensorEntity]:
     """Create the sensor entities."""
 
-    entities: list[HassDayStateSensor] = []
+    entities: list[SensorEntity] = []
 
     for sensor_config in config[CONF_SENSORS]:
         elevation_states: list[ElevationDayState] = []
@@ -139,7 +139,7 @@ class HassDayStateSensor(SensorEntity):
         default_state: DefaultDayState,
         elevation_states: list[ElevationDayState],
         time_states: list[TimeDayState],
-    ) -> None:
+    ):
         """Initialize the sensor."""
 
         self._attr_unique_id = unique_id
