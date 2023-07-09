@@ -45,4 +45,4 @@ runs:
 
     - name: Install Dependencies
       shell: bash
-      run: cd ~/work/hass_day_state/hass_day_state && poetry install
+      run: poetry install

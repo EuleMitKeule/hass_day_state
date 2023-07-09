@@ -5,7 +5,7 @@ description = ""
 authors = ["Lennard Beers <l.beers@outlook.de>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "hass_day_state"}]
+packages = [{include = "custom_components/hass_day_state"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
