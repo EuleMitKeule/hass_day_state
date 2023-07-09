@@ -15,18 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          pip install black
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run black
         run: |
-          python -m black --check --diff custom_components/hass_day_state
+          poetry run black --check --diff custom_components/hass_day_state
 
   isort:
     runs-on: ubuntu-latest
@@ -34,14 +28,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          pip install isort
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run isort
         run: |
@@ -53,14 +41,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          pip install mypy
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run mypy
         run: |
@@ -72,14 +54,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
-      - name: Install dependencies
-        run: |
-          pip install bandit
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run bandit
         run: |
@@ -91,10 +67,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run hassfest
         uses: home-assistant/actions/hassfest@master
@@ -105,10 +79,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
+      - name: Setup using the custom action in .github/actions/setup.yml
+        uses: ./.github/actions/setup
 
       - name: Run hacs
         uses: hacs/action@main
